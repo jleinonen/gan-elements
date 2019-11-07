@@ -23,5 +23,6 @@ def train_gan(gan, batch_gen, noise_gen, num_epochs=1, steps_per_epoch=1, plot_f
 
 if __name__ == "__main__":
     (gan, batch_gen, noise_gen) = build_gan()
-    train_gan(gan, batch_gen, noise_gen, steps_per_epoch=2000,
-        plot_fn="../figures/gan_samples.png")
+    for i in range(200):
+        train_gan(gan, batch_gen, noise_gen, steps_per_epoch=20,
+            plot_fn="../figures/gan_samples_{:03d}.png".format(i))
